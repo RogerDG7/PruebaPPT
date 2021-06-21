@@ -1,0 +1,47 @@
+<div class="container" *ngIf="!juegoEmpezado.empezado && jugadorGanador.rondasGanadas === 0"> 
+    <span style="text-align: center;">
+        <h3>Piedra Papel o Tijera !!</h3>
+    </span>
+    <form [formGroup]="frmJugadores" (ngSubmit)="guardarJugadores()">
+        <div class="form-group">
+            <label for="nombre">Nombre jugador 1: </label>
+            <input type="text" class="form-control" placeholder="nombreJugador1" formControlName="nombreJugador1"
+                [ngClass]="{'is-invalid': frmJugadores.get('nombreJugador1')?.touched && 
+                                          frmJugadores.get('nombreJugador1')?.invalid}">
+            <span class="invalid-feedback">
+                <span *ngIf= "frmJugadores.get('nombreJugador1')?.errors?.required" >
+                    El nombre del jugador uno es obligatorio </span>
+                <span *ngIf= "frmJugadores.get('nombreJugador1')?.errors?.maxLength" >
+                    El Nombre debe contener minimo 20 caracteres
+                </span> 
+            </span>
+        </div>
+        <!-------------------------------jugador dos------------------------ -->
+        <div class="form-group">
+            <label for="nombre">Nombre jugador 2: </label>
+            <input type="text" class="form-control" placeholder="nombreJugador2" formControlName="nombreJugador2"
+                [ngClass]="{'is-invalid': frmJugadores.get('nombreJugador2')?.touched && 
+                                          frmJugadores.get('nombreJugador2')?.invalid}">
+            <span class="invalid-feedback">
+                <span *ngIf="frmJugadores.get('nombreJugador2')?.errors?.required">
+                    El nombre del jugador dos es obligatorio </span>
+                <span *ngIf="frmJugadores.get('nombreJugador2')?.errors?.maxLength">
+                    El Nombre debe contener minimo 20 caracteres
+                </span> 
+            </span>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-md-1">
+                <button type="submit" class="btn btn-primary">Jugar</button>
+            </div>
+        </div>
+    </form>
+</div>
+<app-ronda *ngIf="juegoEmpezado.empezado" (jugadaHecha)="getPlayed( $event )" [jugadorMovto]="jugadorMovto" [resultado]="resultado"></app-ronda>
+<!-- DIV PARA MOSTRAR EL GANADOR-->
+<div *ngIf="jugadorGanador.rondasGanadas === 3">
+    <h1 class="display-4">{{jugadorGanador.nombre}}</h1>
+    <p class="lead">FELICITACIONES!!! GANASTE LA PARTIDA</p>
+    <hr class="my-4">
+    <a class="btn btn-primary btn-lg text-white"  (click)="iniciarPropiedadesJuego()" role="button">Juega de nuevo</a>
+</div>

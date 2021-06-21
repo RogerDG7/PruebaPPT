@@ -1,0 +1,32 @@
+﻿<Properties StartupConfiguration="{0BA6A3C7-CA2D-4FDC-BA85-AFF2E1663C55}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ApiJuego2/Controllers/PartidaController.cs">
+    <Files>
+      <File FileName="ApiJuego2/Context/JuegosContext.cs" Line="22" Column="46" />
+      <File FileName="ApiJuego2/Controllers/JugadorController.cs" />
+      <File FileName="ApiJuego2/Controllers/PartidaController.cs" Line="7" Column="37" />
+      <File FileName="ApiJuego2/Models/Partida.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ApiJuego2" expanded="True">
+            <Node name="ApiJuego2" expanded="True">
+              <Node name="Context" expanded="True">
+                <Node name="JuegosContext.cs" selected="True" />
+              </Node>
+              <Node name="Controllers" expanded="True" />
+              <Node name="Models" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.ApiJuego2 PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

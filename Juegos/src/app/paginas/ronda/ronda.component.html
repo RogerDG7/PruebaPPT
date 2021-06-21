@@ -1,0 +1,30 @@
+<h1>El jugador que elige: {{jugadorMovto.nombre}}</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <div>
+        <select class="form-control form-control-lg" #played>
+          <option disabled>Escoge Movimiento</option>
+          <option *ngFor="let movimiento of movimientos" [value]="movimiento">{{movimiento}}</option>
+        </select>
+        <button class="btn btn-primary mt-2" (click)="makePlayed(played.value)">Aceptar</button>
+      </div>
+    </div>
+    <div class="col-sm" *ngIf="resultado.length">
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">Ronda</th>
+            <th scope="col">Ganador</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of resultado">
+            <th scope="row">{{item.ronda}}</th>
+            <td>{{item.jugadorGanador.nombre}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

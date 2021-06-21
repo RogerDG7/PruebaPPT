@@ -1,0 +1,20 @@
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+        <th scope="col">JUGADOR</th>
+        <th scope="col">JUGADOR RETADOR</th>
+        <th scope="col">RESULTADO</th>
+        <th scope="col">FECHA</th>
+        </tr>
+    </thead>
+    <tbody>
+    <ng-container> 
+        <tr *ngFor="let partida of partidas">
+            <td>{{partida.IdJugador}}</td> 
+            <td>{{partida.IdJugadorRetador}}</td> 
+            <td>{{partida.IdEstadoPartida | estadoPartida}}</td> 
+            <td>{{partida.FechaPartida | date}}</td> 
+        </tr>
+    </ng-container>
+    </tbody>
+</table>
